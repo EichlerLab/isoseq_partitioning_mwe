@@ -12,5 +12,7 @@ snakemake
 ## Input preparation
 FLNCs should be mapped to a reference with GMAP. The segdups file is generated from the genomicSuperDup file (available from UCSC genome browser) using this command:
 ```bash
-zcat genomicSuperDup.tab.gz | awk 'OFS="\t"{print $1,$2,$3,$7":"$8"-"$9}' > hg38_segdups.bed 
+zcat genomicSuperDup.tab.gz | awk 'OFS="\t"{print $1,$2,$3,$7":"$8"-"$9}' > hg38_segdups.bed
+bgzip hg38_segdups.bed
+tabix hg38_segdups.bed.gz 
 ```
