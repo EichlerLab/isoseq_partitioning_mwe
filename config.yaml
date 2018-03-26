@@ -1,0 +1,4 @@
+---
+
+mapped_flnc: isoseq_flnc.intersect_for_test.bam
+segdups: hg38_segdups.bed.gz
